@@ -16,6 +16,7 @@
     "@nx/eslint-plugin": "20.3.3",
     "@nx/jest": "20.3.3",
     "@nx/js": "20.3.3",
+    "@nx/module-federation": "^20.3.3",
     "@nx/playwright": "20.3.3",
     "@nx/react": "20.3.3",
     "@nx/rspack": "20.3.3",
