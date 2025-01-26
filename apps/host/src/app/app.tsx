@@ -1,5 +1,5 @@
 // @ts-expect-error fixed later
-import RemoteButton from "products/RemoteButton";
+import RemoteButton from 'products/RemoteButton';
 
 export function App() {
   return (
