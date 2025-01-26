@@ -1,4 +1,3 @@
-// @ts-expect-error fixed later
 import RemoteButton from 'products/RemoteButton';
 
 export function App() {
