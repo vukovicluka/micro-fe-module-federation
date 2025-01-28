@@ -6,11 +6,21 @@ type ModuleFederationConfig = ConstructorParameters<typeof ModuleFederationPlugi
 const config: ModuleFederationConfig = {
   name: 'host',
   filename: 'remoteEntry.js',
+  experiments: {
+    federationRuntime: 'hoisted',
+    provideExternalRuntime: true,
+  },
   remotes: {
     products: 'products@http://localhost:4201/mf-manifest.json',
   },
-  shared: ['react', 'react-dom'],
-  // runtimePlugins: [resolve(__dirname, './dynamic-remote.ts')],
+  shared: {
+    react: {
+      singleton: true,
+    },
+    'react-dom': {
+      singleton: true,
+    },
+  },
+  //runtimePlugins: [resolve(__dirname, "./dynamic-remote.ts")]
 };
-
 export default config;
