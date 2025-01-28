@@ -6,7 +6,11 @@ import './styles.css';
 
 // init({
 //   name: "host",
-//   remotes: []
+//   // Another way to register the remote
+//   remotes: [{
+//     "name": "products",
+//     "entry": "http://fake.com/mf-manifest.json",
+//   }]
 // })
 
 const root = ReactDOM.createRoot(
