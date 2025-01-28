@@ -7,10 +7,8 @@
   "targets": {
     "build": {
       "executor": "@nx/rspack:rspack",
-      "outputs": [
-        "{options.outputPath}"
-      ],
-      "defaultConfiguration": "production",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "development",
       "options": {
         "target": "web",
         "outputPath": "dist/apps/products",
@@ -18,10 +16,7 @@
         "main": "apps/products/src/main.tsx",
         "tsConfig": "apps/products/tsconfig.app.json",
         "rspackConfig": "apps/products/rspack.config.ts",
-        "assets": [
-          "apps/products/src/favicon.ico",
-          "apps/products/src/assets"
-        ]
+        "assets": ["apps/products/src/favicon.ico", "apps/products/src/assets"]
       },
       "configurations": {
         "development": {
@@ -49,9 +44,7 @@
     },
     "serve-static": {
       "executor": "@nx/web:file-server",
-      "dependsOn": [
-        "build"
-      ],
+      "dependsOn": ["build"],
       "options": {
         "buildTarget": "products:build",
         "spa": true

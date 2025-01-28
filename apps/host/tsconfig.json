@@ -6,10 +6,8 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "paths": {
-      "*": [
-        "apps/host/@mf-types/*"
-      ]
-    },
+      "*": ["apps/host/@mf-types/*"]
+    }
   },
   "files": [],
   "include": [],

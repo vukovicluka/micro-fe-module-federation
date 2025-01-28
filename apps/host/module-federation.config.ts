@@ -1,17 +1,14 @@
-import { ModuleFederationConfig } from '@nx/module-federation';
+import { ModuleFederationPlugin } from '@module-federation/enhanced/rspack';
 
-const sharedLibraries = [
-  "react",
-  "react-dom"
-]
+type ModuleFederationConfig = ConstructorParameters<typeof ModuleFederationPlugin>[0];
 
 const config: ModuleFederationConfig = {
   name: 'host',
-  remotes: [['products', 'products@http://localhost:4201/mf-manifest.json']],
-  shared: (libraryName, _sharedConfig) => {
-    if (!sharedLibraries.includes(libraryName)) {
-      return false
-    }
-  }
+  filename: 'remoteEntry.js',
+  remotes: {
+    products: 'products@http://localhost:4201/mf-manifest.json',
+  },
+  shared: ['react', 'react-dom'],
 };
+
 export default config;
