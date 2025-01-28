@@ -6,12 +6,20 @@
     "start": "nx serve host"
   },
   "private": true,
+  "pnpm": {
+    "overrides": {
+      "@module-federation/runtime": "0.8.5",
+      "@module-federation/enhanced": "0.8.5",
+      "@module-federation/dts-plugin": "0.8.5"
+    }
+  },
   "dependencies": {
     "@nrwl/cli": "^15.9.3",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-error-boundary": "5.0.0",
-    "@module-federation/runtime": "0.8.3"
+    "@module-federation/runtime": "0.8.5",
+    "@module-federation/enhanced": "0.8.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
