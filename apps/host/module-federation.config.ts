@@ -6,10 +6,10 @@ type ModuleFederationConfig = ConstructorParameters<typeof ModuleFederationPlugi
 const config: ModuleFederationConfig = {
   name: 'host',
   filename: 'remoteEntry.js',
-  experiments: {
-    federationRuntime: 'hoisted',
-    provideExternalRuntime: true,
-  },
+  // experiments: {
+  //   federationRuntime: 'hoisted',
+  //   provideExternalRuntime: true,
+  // },
   remotes: {
     products: 'products@http://localhost:4201/mf-manifest.json',
   },
@@ -18,6 +18,9 @@ const config: ModuleFederationConfig = {
       singleton: true,
     },
     'react-dom': {
+      singleton: true,
+    },
+    'react-router-dom': {
       singleton: true,
     },
   },

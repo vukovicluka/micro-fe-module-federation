@@ -5,15 +5,27 @@ type ModuleFederationConfig = ConstructorParameters<typeof ModuleFederationPlugi
 const config: ModuleFederationConfig = {
   name: 'products',
   filename: 'remoteEntry.js',
-  experiments: {
-    federationRuntime: 'hoisted',
-    externalRuntime: true,
-  },
+  // experiments: {
+  //   federationRuntime: 'hoisted',
+  //   externalRuntime: true,
+  // },
   exposes: {
     './Types': './src/types.d.ts',
-    './RemoteButton': './src/components/remote-button.tsx',
+    './ProductsList': './src/components/products-list/products-list.tsx',
+    './ProductsRouter': './src/components/products-router.tsx',
+    // './RemoteButton': './src/components/remote-button.tsx',
   },
-  shared: ['react', 'react-dom'],
+  shared: {
+    react: {
+      singleton: true,
+    },
+    'react-dom': {
+      singleton: true,
+    },
+    'react-router-dom': {
+      singleton: true,
+    },
+  },
 };
 
 export default config;
