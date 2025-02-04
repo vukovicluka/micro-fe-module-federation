@@ -1,3 +1,4 @@
+import { logger } from '@custom-mfe/logger';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './products-list.module.css';
@@ -41,7 +42,13 @@ function ProductsList() {
     <div className={styles.container}>
       <div className={styles.productGrid}>
         {mockProducts.map((product) => (
-          <Link key={product.id} to={`/products/${product.id}`} className={styles.productCard}>
+          <Link
+            key={product.id}
+            to={`/products/${product.id}`}
+            className={styles.productCard}
+            onClick={() => {
+              logger.logInfo(`You clicked ${product.title}`);
+            }}>
             <div className={styles.imageContainer}>
               <img src={product.imageUrl} alt={product.title} className={styles.productImage} />
             </div>
