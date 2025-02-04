@@ -26,6 +26,9 @@ const config: ModuleFederationConfig = {
     '@tanstack/react-query': {
       singleton: true,
     },
+    '@custom-mfe/store': {
+      singleton: true,
+    },
   },
   //runtimePlugins: [resolve(__dirname, "./dynamic-remote.ts")]
 };

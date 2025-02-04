@@ -27,6 +27,9 @@ const config: ModuleFederationConfig = {
     '@tanstack/react-query': {
       singleton: true,
     },
+    '@custom-mfe/store': {
+      singleton: true,
+    },
   },
 };
 

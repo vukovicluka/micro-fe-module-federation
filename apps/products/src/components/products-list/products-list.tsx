@@ -65,4 +65,19 @@ function ProductsList() {
   );
 }
 
+// COMPONENT-LEVEL OWNERSHIP DESIGN pattern
+// If we don't want to share store data (context) accross different modules,
+// we can instantiate and use different query client
+// i.e. below
+
+// const queryClient = new QueryClient();
+
+// const ProductsListWrapper = () => {
+//   return (
+//     <QueryClientProvider client={queryClient}>
+//       <ProductsList />
+//     </QueryClientProvider>
+//   );
+// };
+
 export default ProductsList;
