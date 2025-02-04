@@ -1,7 +1,7 @@
+import { useProfile } from '@custom-mfe/store';
+
 export function User() {
-  return (
-    <div>
-      <h1>User page</h1>
-    </div>
-  );
+  const { data } = useProfile();
+
+  return <div>User Profile {JSON.stringify(data)}</div>;
 }

@@ -1,5 +1,6 @@
 import { logger } from '@custom-mfe/logger';
 import { PropsWithChildren, useEffect } from 'react';
+import { User } from './app/user';
 
 export default function Layout({ children }: PropsWithChildren) {
   useEffect(() => {
@@ -8,5 +9,12 @@ export default function Layout({ children }: PropsWithChildren) {
     });
   }, []);
 
-  return children;
+  return (
+    <>
+      <nav>
+        <User />
+      </nav>
+      {children}
+    </>
+  );
 }

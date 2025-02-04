@@ -23,6 +23,9 @@ const config: ModuleFederationConfig = {
     'react-router-dom': {
       singleton: true,
     },
+    '@tanstack/react-query': {
+      singleton: true,
+    },
   },
   //runtimePlugins: [resolve(__dirname, "./dynamic-remote.ts")]
 };

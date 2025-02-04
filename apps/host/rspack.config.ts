@@ -16,6 +16,7 @@ export default composePlugins(withNx(), withReact(), (config, ctx) => {
     alias: {
       ...(config.resolve?.alias ?? {}),
       '@custom-mfe/logger': path.resolve(ctx.context.root, 'dist/packages/logger'),
+      '@custom-mfe/store': path.resolve(ctx.context.root, 'dist/packages/store'),
     },
   };
 

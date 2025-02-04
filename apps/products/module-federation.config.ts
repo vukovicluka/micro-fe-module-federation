@@ -13,7 +13,6 @@ const config: ModuleFederationConfig = {
     './Types': './src/types.d.ts',
     './ProductsList': './src/components/products-list/products-list.tsx',
     './ProductsRouter': './src/components/products-router.tsx',
-    // './RemoteButton': './src/components/remote-button.tsx',
   },
   shared: {
     react: {
@@ -23,6 +22,9 @@ const config: ModuleFederationConfig = {
       singleton: true,
     },
     'react-router-dom': {
+      singleton: true,
+    },
+    '@tanstack/react-query': {
       singleton: true,
     },
   },

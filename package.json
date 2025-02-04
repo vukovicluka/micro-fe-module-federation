@@ -16,6 +16,7 @@
     "@module-federation/enhanced": "0.8.7",
     "@module-federation/runtime": "0.8.7",
     "@nrwl/cli": "^15.9.3",
+    "@tanstack/react-query": "^5.66.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-error-boundary": "5.0.0",
