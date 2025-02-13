@@ -1,5 +1,5 @@
 import { logger } from '@custom-mfe/logger';
-import { useProfile } from '@custom-mfe/store';
+import { useContextProfile, useProfile, useStoreProfile } from '@custom-mfe/store';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './products-list.module.css';
@@ -40,11 +40,17 @@ const mockProducts: Product[] = [
 
 function ProductsList() {
   const { data } = useProfile();
+  const { get } = useStoreProfile();
+  const { profile } = useContextProfile();
+
+  const storeProfile = get();
 
   return (
     <div className={styles.container}>
       <div className={styles.productGrid}>
-        <div>{JSON.stringify(data)}</div>
+        <div>User Profile {JSON.stringify(data)}</div>
+        <div>Store User Profile {JSON.stringify(storeProfile)}</div>
+        <div>Context User Profile {JSON.stringify(profile)}</div>
         {mockProducts.map((product) => (
           <Link
             key={product.id}

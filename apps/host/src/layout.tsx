@@ -11,7 +11,7 @@ export default function Layout({ children }: PropsWithChildren) {
 
   return (
     <>
-      <nav>
+      <nav style={{ background: '#000', padding: '1rem', color: '#fff' }}>
         <User />
       </nav>
       {children}
