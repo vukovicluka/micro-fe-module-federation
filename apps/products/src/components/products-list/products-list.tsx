@@ -1,3 +1,4 @@
+import { Components } from '@custom-mfe/components';
 import { logger } from '@custom-mfe/logger';
 import { useContextProfile, useProfile, useStoreProfile } from '@custom-mfe/store';
 import React from 'react';
@@ -47,6 +48,7 @@ function ProductsList() {
 
   return (
     <div className={styles.container}>
+      <Components />
       <div className={styles.productGrid}>
         <div>User Profile {JSON.stringify(data)}</div>
         <div>Store User Profile {JSON.stringify(storeProfile)}</div>
